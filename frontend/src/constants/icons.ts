@@ -1,0 +1,41 @@
+import {
+  AzurePng,
+  BinancePng,
+  BlockchainPng,
+  CoinbasePng,
+  DashScopePng,
+  DeepSeekPng,
+  GatePng,
+  GooglePng,
+  HyperliquidPng,
+  MexcPng,
+  OkxPng,
+  OpenAiCompatiblePng,
+  OpenAiPng,
+  OpenRouterPng,
+  SiliconFlowPng,
+  ValueCellAgentPng,
+} from "@/assets/png";
+
+export const MODEL_PROVIDER_ICONS = {
+  openrouter: OpenRouterPng,
+  siliconflow: SiliconFlowPng,
+  openai: OpenAiPng,
+  "openai-compatible": OpenAiCompatiblePng,
+  deepseek: DeepSeekPng,
+  google: GooglePng,
+  azure: AzurePng,
+  dashscope: DashScopePng,
+};
+
+export const EXCHANGE_ICONS = {
+  binance: BinancePng,
+  blockchaincom: BlockchainPng,
+  coinbase: CoinbasePng,
+  coinbaseexchange: CoinbasePng,
+  gate: GatePng,
+  hyperliquid: HyperliquidPng,
+  mexc: MexcPng,
+  okx: OkxPng,
+  virtual: ValueCellAgentPng,
+};

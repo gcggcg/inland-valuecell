@@ -1,0 +1,64 @@
+{
+    "$schema": "https://schema.tauri.app/config/2",
+    "productName": "ValueCell",
+    "version": "0.1.17",
+    "identifier": "com.valuecell.valuecellapp",
+    "build": {
+        "beforeDevCommand": "bun run dev:tauri",
+        "devUrl": "http://localhost:1420",
+        "beforeBuildCommand": "sh scripts/pre-build.sh && bun run build",
+        "frontendDist": "../build/client"
+    },
+    "app": {
+        "windows": [
+            {
+                "title": "ValueCell",
+                "minWidth": 1300,
+                "minHeight": 780,
+                "hiddenTitle": true
+            }
+        ],
+        "security": {
+            "csp": null
+        }
+    },
+    "bundle": {
+        "windows": {
+            "nsis": {
+                "installerHooks": "hooks.nsh"
+            }
+        },
+        "externalBin": [
+            "binaries/uv"
+        ],
+        "active": true,
+        "targets": "all",
+        "icon": [
+            "icons/32x32.png",
+            "icons/128x128.png",
+            "icons/128x128@2x.png",
+            "icons/icon.icns",
+            "icons/icon.ico"
+        ],
+        "resources": {
+            "../../python": "backend",
+            "../../.env.example": ".env.example"
+        },
+        "createUpdaterArtifacts": true
+    },
+    "plugins": {
+        "updater": {
+            "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IEM1MkM3MEEyMTcwMzU1QTMKUldTalZRTVhvbkFzeFh6WUhrYWprcURCTy9UcjVaYm1aaTNMVk5TMzF6TCtmS0N5SUpPYWxCdWEK",
+            "endpoints": [
+                "https://github.com/ValueCell-ai/valuecell/releases/latest/download/latest.json"
+            ]
+        },
+        "deep-link": {
+            "desktop": {
+                "schemes": [
+                    "valuecell"
+                ]
+            }
+        }
+    }
+}

@@ -1,0 +1,58 @@
+Goal
+Produce steady, risk‑aware crypto trading decisions that aim for consistent small gains while protecting capital.
+
+Style & constraints
+- Focus on liquid majors (e.g., BTC-USD, ETH-USD). Avoid low-liquidity altcoins.
+- Size conservatively: target at most 1–2% of NAV per new trade (respect cap_factor).
+- Limit concurrent open positions (respect max_positions from constraints/config).
+- Prefer market or tight-limit entries on pullbacks; avoid chasing large, fast moves.
+- Favor trend‑aligned entries; if the mid‑term trend is unclear, sit out.
+- Avoid entries during maintenance windows or very low volume periods.
+
+Signals & decision heuristics
+- Trend detection: short EMA (e.g., 20) vs long EMA (e.g., 100); bias with the trend.
+- Momentum confirmation: avoid overbought entries; prefer RSI turning up from balanced/oversold zones.
+- Volatility filter: when realized volatility is high, reduce size or skip.
+- Pullbacks: enter nearer to moving averages or support zones; reduce chasing breakouts.
+- Confluence: require at least two agreeing signals (trend + momentum/volume/structure).
+
+Order sizing & execution
+- Notional = min(cap_factor * equity, available buying power, venue caps).
+- Convert notional → quantity using mark price; clamp to min_trade_qty, max_order_qty, and quantity_step.
+- Use market orders for small rebalances; prefer tight-limit for larger orders to control slippage.
+- If partial fills occur, retry briefly; then treat as partial and update portfolio.
+
+Risk management (mandatory)
+- Stops: place below recent support/ATR multiples for longs; above resistance for shorts.
+- Targets: risk:reward at least 1:1.5 by default (configurable).
+- Trailing: consider converting to trailing after ~1x risk achieved.
+- Portfolio risk cap: aggregated potential loss should not exceed a fraction of NAV.
+- Fees: include estimated fees when sizing and evaluating P/L.
+
+Position management & lifecycle
+- On open: record entry price, notional, leverage, and planned stop/target in trade meta.
+- Re-evaluate each cycle: close on stop/target hit or regime flip; avoid frequent flip-flopping.
+- Flip-by-flat: fully close before reversing direction on the same symbol.
+- cautious full deployment
+    - Purpose: staged scale‑in for high‑conviction, well‑liquid opportunities.
+    - Entry criteria: high digest/win_rate + strong multi‑factor confluence; sufficient buying_power; no blocking risk_flags.
+    - Execution: scale in 2–3 tranches (e.g., 50/30/20); require confirmation between tranches; start with lower leverage.
+    - Safety: ensure liquidation distance > configured margin; abort remaining tranches on large slippage or failed fills.
+    - Post‑deploy: enable trailing stops and de‑risk if risk_flags flip.
+
+Edge cases & guards
+- If computed quantity < min_trade_qty, skip.
+- If spread/slippage estimate is large, skip or reduce size.
+- If data is stale (last candle older than 2× interval), skip for that symbol.
+
+Rationale and explainability
+- For each action, include a short rationale: which signals agreed and the stop/target idea.
+- For skipped signals, include a brief reason (e.g., volatility too high, below min_notional).
+
+Telemetry & meta
+- Attach: compose_id, strategy_id, timestamp, estimated_fee, estimated_notional, confidence_score.
+- Confidence: normalize to [0,1]; proportionally reduce size when confidence is low (< 0.5).
+
+Summary (one sentence)
+Be conservative and trend‑aware: take small, well‑sized positions on pullbacks or confirmed breakouts, protect capital with explicit stops, and favor repeatable gains over risky bets.
+
