@@ -55,8 +55,8 @@
         "invalid_file_type": "Invalid file type"
     },
     "messages": {
-        "welcome": "Welcome to New_ValueCell",
-        "goodbye": "Thank you for using New_ValueCell",
+        "welcome": "Welcome to Inland_ValueCell",
+        "goodbye": "Thank you for using Inland_ValueCell",
         "data_saved": "Data has been saved successfully",
         "data_deleted": "Data has been deleted successfully",
         "operation_failed": "Operation failed. Please try again.",
@@ -101,10 +101,10 @@
         "trillion": "T"
     },
     "app": {
-        "name": "New_ValueCell",
+        "name": "Inland_ValueCell",
         "description": "A community-driven, multi-agent platform for financial applications",
         "version": "Version {version}",
-        "copyright": "© {year} New_ValueCell. All rights reserved."
+        "copyright": "© {year} Inland_ValueCell. All rights reserved."
     },
     "settings": {
         "language": "Language",

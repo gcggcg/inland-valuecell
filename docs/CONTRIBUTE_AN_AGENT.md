@@ -251,10 +251,10 @@ For local web development, simply start the backend server which will automatica
 
 ```bash
 # Start the full stack (frontend + backend with all agents)
-bash start.sh
+bash start-linux.sh
 
 # Or start backend only
-bash start.sh --no-frontend
+bash start-linux.sh --no-frontend
 ```
 
 The backend will automatically discover and initialize your agent based on the agent card configuration.

@@ -166,7 +166,7 @@ ValueCell 是一個基於Python的應用程式，且有完備的前端操作頁�
 
 ### Linux / Macos
 ```bash
-bash start.sh
+bash start-linux.sh
 ```
 
 ### Windows (PowerShell)

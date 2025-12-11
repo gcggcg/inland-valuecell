@@ -7,7 +7,7 @@ import { Plus } from "lucide-react";
 export default function HomeLayout() {
   return (
     <div className="flex flex-1 flex-col gap-4 overflow-hidden bg-gray-100 py-4 pr-4 pl-2">
-      <h1 className="font-medium text-3xl">👋 Welcome to New_ValueCell !</h1>
+      <h1 className="font-medium text-3xl">👋 Welcome to Inland_ValueCell !</h1>
 
       <div className="flex flex-1 gap-3 overflow-hidden">
         <main className="scroll-container h-full flex-1 rounded-lg">
