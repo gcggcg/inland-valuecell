@@ -55,8 +55,8 @@
         "invalid_file_type": "无效的文件类型"
     },
     "messages": {
-        "welcome": "欢迎使用New_ValueCell",
-        "goodbye": "感谢您使用New_ValueCell",
+        "welcome": "欢迎使用Inland_ValueCell",
+        "goodbye": "感谢您使用Inland_ValueCell",
         "data_saved": "数据已成功保存",
         "data_deleted": "数据已成功删除",
         "operation_failed": "操作失败，请重试",
@@ -101,10 +101,10 @@
         "trillion": "万亿"
     },
     "app": {
-        "name": "New_ValueCell",
+        "name": "Inland_ValueCell",
         "description": "社区驱动的多智能体金融应用平台",
         "version": "版本 {version}",
-        "copyright": "© {year} New_ValueCell. 保留所有权利。"
+        "copyright": "© {year} Inland_ValueCell. 保留所有权利。"
     },
     "settings": {
         "language": "语言",
