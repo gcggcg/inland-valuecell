@@ -166,7 +166,7 @@ ValueCellは包括的なWebインターフェースを備えたPythonベース�
 
 ### Linux / Macos
 ```bash
-bash start.sh
+bash start-linux.sh
 ```
 
 ### Windows (PowerShell)

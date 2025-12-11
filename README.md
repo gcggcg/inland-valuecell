@@ -173,7 +173,7 @@ Launch the complete application (frontend, backend, and agents):
 
 ### Linux / Macos
 ```bash
-bash start.sh
+bash start-linux.sh
 ```
 
 ### Windows (PowerShell)
