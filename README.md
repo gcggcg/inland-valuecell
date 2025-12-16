@@ -48,8 +48,16 @@ Welcome to join our Discord community to share feedback and issues you encounter
 
 # 项目部署文档
 ```text
+    0. 国内代理设置:
+       Linux系统修改添加/etc/hosts文件,windows添加C:\Windows\System32\drivers\etc\hosts文件
+            140.82.113.4 github.com
+            140.82.113.4 www.github.com
+            140.82.113.4 api.github.com
+            140.82.113.4 gist.github.com
     1. 项目架构是前后端分离设计，前端使用的是React，后端使用Python.
-    2. 前端项目配置文件在`frontend/.env`文件。只需要修改后端的`VITE_API_URL`变量，即可完成部署。这里直接使用真实的IP地址，请自行修改。
+  
+    2. 前端项目配置文件在`frontend/.env`文件。只需要修改后端的`VITE_API_URL`变量指定对外访问的IP，即可完成部署。这里直接使用真实的IP地址，请自行修改。
+  
     3. 后端项目配置文件在当前项目的`.env`文件,具体配置根据需求修改。
 ```
 

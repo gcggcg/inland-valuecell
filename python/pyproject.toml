@@ -113,3 +113,6 @@ skip_glob = [
     "docs/**",
     "**/docs/**",
 ]
+# uv 配置部分,添加国内镜像源代理
+[tool.uv]
+index-url = "https://pypi.tuna.tsinghua.edu.cn/simple"
