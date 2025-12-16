@@ -59,6 +59,9 @@ Welcome to join our Discord community to share feedback and issues you encounter
     2. 前端项目配置文件在`frontend/.env`文件。只需要修改后端的`VITE_API_URL`变量指定对外访问的IP，即可完成部署。这里直接使用真实的IP地址，请自行修改。
   
     3. 后端项目配置文件在当前项目的`.env`文件,具体配置根据需求修改。
+
+    4. 运行项目: linux环境直接运行./start-linux.sh, windows环境直接运行start-win.ps1.
+    (这里脚本自动化安装相关依赖，所有的东西会自动下载安装，只需要一键启动就可以)
 ```
 
 # Screenshot
